@@ -1,0 +1,36 @@
+- hosts: documentale
+  become: true
+  vars:
+    ssh_user: "azureuser"
+    wp_version: 5.8.2
+    wp_webserver: "httpd"
+    wp_mysql_db: 'wp_database'
+    wp_mysql_user: 'wp_user'
+    wp_mysql_password: 'c5aXs14B65f41s'
+    wp_admin_email: 'd.tufano@almaviva.it'
+    wp_sitename: documentale-sem.almaviva.it
+    wp_install_dir: "/var/www/wordpress"
+    selfsigned: "true"
+    apache_server_binding: "*"
+    apache_server_http_port: "80"
+    apache_server_name: documentale-sem.almaviva.it
+    apache_server_https_port: "443"
+    certificates_path: "/etc/ssl/wordpress/"
+    email_address: ""
+    country_name: "IT"
+    organization_name: "Almaviva"
+    key_size: 2048
+    key_type: RSA # Others include DSA, ECC, Ed25519, Ed448, X25519, X448
+    mysql_version: "5.6"
+    installation_dir: "/opt"
+    pasv_max: 10200
+    pasv_min: 10090
+    ftp_user: ftp
+    ftp_password: fq5ifouni2 #$6$v2ttoqOkVsVvRZ/L$rTZoTn6BqGa3TacFEvzjyM77qCXIIFNQ40mEQEXpmIcELkeiIq1/eDvjhYH/TO/pZZnGee9vnYMCr06n03qWa. #fq5ifouni2 (must be encrypted)
+    ftp_group: ftp
+  roles:
+   - mysql
+   - wordpress
+#   - ftp
+   
+
